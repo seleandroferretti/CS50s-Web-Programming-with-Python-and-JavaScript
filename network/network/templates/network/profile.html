@@ -1,0 +1,98 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+    <h2 style="padding-left:48px;padding-top:20px;">My Profile</h2>
+
+    <div id="container-post" style="text-align: center;">
+        <div>
+            <p id="profile-name" style="display:inline-block; margin-right:10px;">{{ visited_profile.username|title }}</p>
+            <div style="display:inline-block;">
+                {% if user != visited_profile %}
+                    {% if isFollow %}
+                        <form action="{% url 'unfollow' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="visited_profile" value="{{ visited_profile }}" />
+                            <input id="follow-button" type="submit" class="btn btn-outline-dark" value="Unfollow" />
+                        </form>
+                    {% else %}
+                        <form action="{% url 'follow' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="visited_profile" value="{{ visited_profile }}" />
+                            <input id="follow-button" type="submit" class="btn btn-outline-info" value="Follow" />
+                        </form>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+        <div id="profile-follows" style="display: inline-flex; width: auto;">
+            <div style="padding-right: 35px;">
+                <p>Followers: {{ followers.count }}</p>
+            </div>
+            <div>
+                <p>Following: {{ following.count }}</p>
+            </div>
+        </div>
+    </div>
+    
+    {% for post in posts_per_page %}
+    <div id="container-post">
+        <div id="container-one-post">
+            <div id="user-post">
+                <h4 style="padding-right: 15px"><a style="text-decoration:none;" class="text-dark" href="{% url 'profile' post.user %}">{{ post.user|title }}</a></h4>
+            </div>
+            <div class="edit-post">
+                <div>
+                    <p id="post-content"> {{ post.content }}</p>
+                </div>
+                {% if post.user == request.user %}
+                    <div>
+                        <button onclick="editPost(this)" class="btn btn-secondary edit-button">&#9999; Edit</button>
+                        <button onclick="savePost(this, {{post.id}})" class="btn btn-secondary save-button">&#128190; Save</button>
+                    </div>
+                {% endif %}
+            </div>
+            <p style="color: #83898f; margin-bottom:0px; padding-top:18px;"> {{ post.date }}</p>
+            
+            <div style="margin-top:20px; display:flex; with: 100%;">
+                <div style="padding-right:5px;">
+                    {% if user.is_authenticated %}
+                        <a id="{{ post.id }}" class="like-button">
+                            {% if user in post.likes.all %}
+                                <span>&#10084;</span>
+                            {% else %}
+                                <span>&#129293;</span>
+                            {% endif %}
+                        </a>
+                    {% endif %}
+                </div>
+                <div style="display:flex; with: 100%;">
+                    <div>
+                        <string id="likes-post-{{ post.id }}">{{ post.likes.all.count }} </strong>
+                    </div>
+                    <div>
+                        <p style="padding-left:8px;">people like this</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination d-flex justify-content-center">
+            {% if posts_per_page.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{posts_per_page.previous_page_number}}">Previous</a>
+            </li>
+            {% endif %}
+            {% if posts_per_page.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{posts_per_page.next_page_number}}">Next</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}

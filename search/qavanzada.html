@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Google</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="qavanzada.css"
+      media="screen"
+    />
+  </head>
+  <body>
+    <nav class="elnav">
+      <ul class="derecha">
+        <li><a href="index.html">Buscar con Google</a></li>
+      </ul>
+
+      <ul class="izquierda">
+        <li>
+          <a href="index.html" title="Ir a la Pagina principal de Google"
+            ><img src="google.png" alt="Google Search" class="logo"
+          /></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h1 class="title">Búsqueda avanzada</h1>
+      <div class="borderbottom"></div>
+      <form action="https://google.com/search">
+        <div class="">
+          <h1 class="subtitle">Mostrar páginas que contengan...</h1>
+        </div>
+
+        <div class="options">
+          <div class="labels">
+            <label for="1" class="label1">todas estas palabras:</label>
+          </div>
+          <div>
+            <input id="1" type="text" name="as_q" class="input" />
+          </div>
+        </div>
+
+        <div class="options">
+          <div class="labels">
+            <label for="2">esta palabra o frase exactas:</label>
+          </div>
+          <div>
+            <input id="2" type="text" name="as_epq" class="input" />
+          </div>
+        </div>
+
+        <div class="options">
+          <div class="labels">
+            <label for="3">cualquiera de estas palabras:</label>
+          </div>
+          <div>
+            <input id="3" type="text" name="as_oq" class="input" />
+          </div>
+        </div>
+
+        <div class="options">
+          <div class="labels">
+            <label for="4" class="label4">ninguna de estas palabras:</label>
+          </div>
+          <div>
+            <input id="4" type="text" name="as_eq" class="input" />
+          </div>
+        </div>
+
+        <div class="botones">
+          <input type="submit" value="Búsqueda avanzada" class="boton" />
+        </div>
+      </form>
+    </div>
+
+    <div class="base">
+      <div class="arg">
+        <p>Argentina</p>
+      </div>
+      <div class="borderbottom"></div>
+      <footer class="footer">
+        <ul class="footerstyles parteizquierda">
+          <li><a href="#">Condiciones</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>

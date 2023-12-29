@@ -1,0 +1,73 @@
+#post-textarea {
+    margin-bottom: 20px;
+}
+
+#post-form-style {
+    margin: 25px;
+}
+
+#container-post {
+    margin: 25px 45px 25px 45px;
+    border: 1px solid rgb(223, 218, 218);
+    border-radius: 1.2px;
+}
+
+#container-one-post {
+    margin: 25px;
+}
+
+#user-post {
+    display: flex;
+    width: 100%;
+}
+
+#post-content {
+    font-size: 20px;
+    margin-bottom: 0px;
+    padding-right: 20px;
+}
+
+#profile-name {
+    font-size: 45px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+#profile-follows {
+    margin:  0px 20px 20px 20px;
+    padding: 25px 45px 15px 45px;
+    border: 1px solid rgb(223, 218, 218);
+    border-radius: 1.2px;
+}
+
+#follow-button {
+    margin-bottom: 20px;
+}
+
+.like-button {
+    cursor: pointer;
+}
+
+.edit-post {
+    display:flex;
+    width: 100%;
+}
+
+.text-area-width {
+    width:90%;
+}
+
+.edit-button {
+    font-size:18px;
+    padding: 0px 6px 0px 6px;
+    margin-top:5px;
+}
+
+.save-button {
+    margin-left: 25px;
+    font-size:18px;
+    display:none;
+    padding: 0px 6px 0px 6px;
+    margin-top:5px;
+}
+

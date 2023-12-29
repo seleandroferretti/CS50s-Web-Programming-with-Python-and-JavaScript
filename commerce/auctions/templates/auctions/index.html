@@ -1,0 +1,33 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Auctions</h2>
+    <div class="d-flex flex-column align-items-start justify-content-start" style="gap: 20px">
+        {% for l in auctions %}
+            <div class="card position-relative d-flex flex-row" style="width: 100%;">
+                <a href="{% url 'auctionPage' pk=l.pk %}" class="position-absolute h-100 w-100" style="top:0; left:0;"></a>
+                <div style="margin-top:10px">
+                    <img src="{{ l.picture_url }}" style="width: 140px; height: 230px; margin-left: 50px; margin-right: 50px;">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3>{{ l.title }}</h3>
+                    </div>
+                    <div class="card-text d-flex flex-column">
+                        <div>
+                            <b>Price: </b>${{ l.bid }}
+                        </div>
+                        <div style="margin-top:12px;">
+                            <b>Description: </b>{{ l.description }}
+                        </div>
+                        <div style="margin-top:12px;">
+                            <p style="color:rgb(132, 141, 148)">Created {{ l.created_date|date:"M d, Y" }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p style="margin-left:20px">No auctions yet.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

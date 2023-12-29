@@ -1,0 +1,33 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Watched Auctions</h2>
+    <div class="d-flex flex-column align-items-start justify-content-start" style="gap: 20px">
+        {% for w in watchlist %}
+            <div class="card position-relative d-flex flex-row" style="width: 100%;">
+                <a href="{% url 'auctionPage' pk=w.auction.pk %}" class="position-absolute h-100 w-100" style="top:0; left:0;"></a>
+                <div>
+                    <img src="{{ w.auction.picture_url }}" style="width: 140px; height: 230px; margin-left: 50px; margin-right: 50px;">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3>{{ w.auction.title }}</h3>
+                    </div>
+                    <div class="card-text d-flex flex-column">
+                        <div>
+                            <b>Price: </b>${{ w.auction.bid }}
+                        </div>
+                        <div style="margin-top:12px;">
+                            <b>Description: </b>{{ w.auction.description }}
+                        </div>
+                        <div style="margin-top:12px;">
+                            <p style="color:rgb(132, 141, 148)">Created {{ w.auction.created_date }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p style="margin-left:20px">There are no auctions in the watchlist.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

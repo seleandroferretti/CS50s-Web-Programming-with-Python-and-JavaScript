@@ -1,0 +1,135 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <h2>Auction: {{object.title}}</h2>
+
+    <div style="display: flex;">
+        <div style="flex: 0 0 30%;">
+            {% if user.is_authenticated %}
+                <div class="d-flex align-items-center justify-content-start" style="gap:10px">
+                    {% if object.status %}
+                        {% if hasWatchlist %}
+                        <form action="{% url 'addWatchlist' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="auction_id" value="{{object.pk}}" />
+                            <button name="remove" value="1" type="submit" class="btn btn-warning" style="padding: 1px 3px;">
+                                <b>Remove Watchlist</b>
+                            </button>
+                        </form>
+                        {% else %}
+                        <form action="{% url 'addWatchlist' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="auction_id" value="{{object.pk}}" />
+                            <button name="remove" type="submit" class="btn btn-success" style="padding: 1px 3px;">
+                                <b>Add to Watchlist</b>
+                            </button>
+                        </form>
+                        {% endif %}
+                    {% endif %}
+
+                    {% if object.status and object.author == request.user %}
+                    <form action="{% url 'finishAuction' pk=object.pk %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger" style="padding: 1px 3px;">
+                            <b>Finish Auction</b>
+                        </button>
+                    </form>
+                    {% endif %}
+                </div>
+            {% endif %}
+            <div>
+                <img src="{{ object.picture_url }}" style="width: 180px; height: 300px; margin: 25px;">
+            </div>
+        </div>
+    
+        <div style="flex: 1;">
+            <div style="margin-top:10px">
+                <p><b>Description:</b> {{ object.description }}</p>
+            </div>
+
+            {% if object.status %}
+                <div style="margin-top: px;">
+                    <h4>Latest bid: ${{ object.bid }}</h4>
+                </div>
+                {% if user.is_authenticated %}
+                <form action="{% url 'newBid' %}" method="post">
+                    <div class="d-flex flex-column">
+                        <label style="margin:0px;  margin-bottom:2px;">{{ object.auction_bid.all|length }} bid(s) so far.
+                            {% if object.auction_bid.all|length != 0 %}
+                                {% if object.get_last_bid.user == request.user %}
+                                    Your bid is the current bid.
+                                {% else %}
+                                    {{ object.get_last_bid.user.username }} has the latest bid.
+                                {% endif %}
+                            {% endif %}
+                        </label>
+                        {% csrf_token %}
+                        {{ newBidForm }}
+                        <button class="btn-success btn" type="submit" style="margin:0px; width:90px; margin-top:18px;">Bid</button>
+                    </div>
+                </form>
+                {% endif %}
+            {% endif %}
+
+            <div style="margin-top: 18px;">
+                <p><b>Details:</b></p>
+                <ul>
+                    <li>Listed by: {{ object.author }}</li>
+                    <li>Category: {{ object.get_category_display }}</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 18px;">
+            {% if object.status %}
+                <p><b>Status:</b> <b style="color: green">Active</b></p>
+            {% else %}
+                <p><b>Status:</b> <b style="color: red">Finished</b></p>
+                {% if object.author != request.user %}
+                    {% if object.get_last_bid.user.username == request.user.username %}
+                        <div style="margin-top: 30px;">
+                            <h4><b style="color: green; border: 1px solid green; padding:8px">You have won the auction &#127881;</b></h4>
+                        </div>
+                    {% else %}
+                        <div style="margin-top: 30px;">
+                            <h4><b style="color: red; border: 1px solid red; padding:8px">You have lost the auction &#128532;</b></h4>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 18px;">
+        <div class="list-group">
+            <h4>Comments:</h4>
+            <div style="width: 400px; margin-left:20px;">
+                {% for comment in object.auction_comment.all %}
+                        <div class="list-group-item flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <p class="mb-1">{{ comment.comment }}</p>
+                                <small>{{ comment.created_date|date:"M d, Y" }}</small>
+                            </div>
+                        </div>
+                {% empty %}
+                        <p>No comments yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        {% if user.is_authenticated %}
+            {% if object.status %}
+            <form action="{% url 'newComment' pk=object.pk %}" method="post">
+                <div class="d-flex flex-column" style="width: 400px; margin-left:20px;">
+                    <label style="margin-top:20px;">Leave a comment</label>
+                    {% csrf_token %}
+                    {{ newCommentForm }}
+                    <button class="btn-success btn" type="submit" style="margin:0px; width:90px;">Send</button>
+                </div>
+            </form>
+            {% endif %}
+        {% endif %}
+    </div>
+    
+{% endblock %}

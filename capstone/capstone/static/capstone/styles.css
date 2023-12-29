@@ -1,0 +1,1398 @@
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar.nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.container-login {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.container-login input {
+    width: 90%;
+    height: 40px;
+    margin: 0.5rem;
+  }
+  
+.container-login button {
+padding: 0.5em 1em;
+border: none;
+cursor: pointer;
+}
+
+.container-cursos {
+    margin-left: 22%;
+    margin-right: 22%;
+    border: 1px solid rgb(223, 218, 218);
+    border-radius: 1.2px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#cursos-form-style {
+    margin: 25px;
+}
+
+#cursos-input {
+    margin-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+#online-user-icon {
+    color: rgb(69, 248, 69);
+    font-size: 12px;
+}
+
+.div-contenedor-padre div:not(:last-of-type) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12;
+}
+
+.button-div {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    margin-bottom: 12;
+    margin-top: 20px;
+}
+
+.nombre-curso-label {
+    width: 35%;
+}
+
+.nombre-curso-input {
+    width: 65%;
+}
+
+.select-categorias {
+    margin-bottom: 18px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.td-acciones a {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view_course_container {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.inner_div {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.modal-dialog {
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.logged-in {
+    color: black;
+    margin-right: 8px;
+}
+
+.logged-in:hover {
+    color: black;
+}
+
+.log-in-register {
+    display: flex;
+    list-style-type: none;
+}
+
+.log-in-register li {
+    display: inline-block;
+}
+
+.log-in-register li a {
+    color: rgb(129, 128, 128);
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 24px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    border-bottom: 2px solid;
+}
+
+.log-in-register li a:hover {
+    color: black;
+}
+
+.student-list-container {
+    max-height: 200px;
+    overflow-y: auto;
+    width: 24%;
+}
+
+.edit-forms {
+    border: 2px solid rgb(196, 194, 194);
+    border-radius: 4px;
+    padding: 30px;
+    width: 44%;
+    background-color: rgb(238, 231, 231);
+}
+
+.edit-course-form {
+    border: 2px solid rgb(196, 194, 194);
+    border-radius: 4px;
+    padding: 30px;
+    width: 56%;
+    background-color: rgb(238, 231, 231);
+}
+
+.view-course-data {
+    border: 2px solid rgb(196, 194, 194);
+    border-radius: 4px;
+    padding: 30px;
+    width: auto;
+    background-color: rgb(238, 231, 231);
+}
+
+.centered-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.page-link-styles {
+    border: 1.2px solid rgb(109, 108, 108);
+    color: black;
+    margin-left: 2px;
+}
+
+.page-link-styles:hover {
+    border: 1.2px solid rgb(109, 108, 108);
+    background-color: black;
+    color: white;
+}
+
+.view-style {
+    color: white;
+    background-color: #007bff;
+    padding: 7px;
+    border: 1.2px solid #007bff;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.view-style:hover {
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 1200px) {
+    .view-style {
+      font-size: 11px;
+      padding: 4px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .view-style {
+      font-size: 10px;
+      padding: 3px;
+    }
+}
+
+@media (max-width: 800px) {
+    .view-style {
+      font-size: 8px;
+      padding: 2px;
+    }
+}
+
+@media (max-width: 1200px) {
+    th, td {
+      font-size: 12px;
+    }
+}
+
+@media (max-width: 1000px) {
+    th, td {
+      font-size: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    th, td {
+      font-size: 9px;
+    }
+}
+
+@media (max-width: 600px) {
+    th, td {
+      font-size: 8px;
+    }
+}
+
+@media (max-width: 1200px) {
+    td button i {
+      font-size: 12px;
+    }
+}
+
+@media (max-width: 1000px) {
+    td button i {
+      font-size: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    td button i {
+      font-size: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    td button i {
+      font-size: 6px;
+    }
+}
+
+.edit-button {
+    font-size: 14px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (max-width: 1000px) {
+    .edit-button {
+      font-size: 10px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+}
+
+@media (max-width: 800px) {
+    .edit-button {
+      font-size: 8px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .edit-button {
+      font-size: 6px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .page-item a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .page-item a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .page-item a {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-item a {
+        font-size: 6px;
+    }
+}
+
+@media (max-width: 1200px) {
+    h4 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1000px) {
+    h4 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 800px) {
+    h4 {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    h4 {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #add-students-button, #add-teachers-button {
+        font-size: 14px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #add-students-button, #add-teachers-button {
+      font-size: 10px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+}
+
+@media (max-width: 800px) {
+    #add-students-button, #add-teachers-button {
+      font-size: 8px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    #add-students-button, #add-teachers-button {
+      font-size: 6px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+}
+
+@media (max-width: 1200px) {
+    h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1000px) {
+    h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 800px) {
+    h3 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    h3 {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #logo {
+        max-width: 80%;
+        margin-left: 4px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #logo {
+        max-width: 60%;
+        margin-left: 4px;
+    }
+}
+
+@media (max-width: 800px) {
+    #logo {
+        max-width: 40%;
+        margin-left: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    #logo {
+        max-width: 20%;
+        margin-left: 8px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .logged-in {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .logged-in {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .logged-in {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .logged-in {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #online-user-icon {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #online-user-icon {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 800px) {
+    #online-user-icon {
+        font-size: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    #online-user-icon {
+        font-size: 4px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .edit-forms label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+  
+    .edit-forms input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .edit-forms label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+  
+    .edit-forms input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .edit-forms label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 10px;
+    }
+  
+    .edit-forms input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .edit-forms label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 8px;
+    }
+  
+    .edit-forms input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 8px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .edit-course-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+  
+    .edit-course-form input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .edit-course-form select {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .edit-course-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+  
+    .edit-course-form input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .edit-course-form select {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .edit-course-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 10px;
+    }
+  
+    .edit-course-form input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 10px;
+    }
+
+    .edit-course-form select {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .edit-course-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 8px;
+    }
+  
+    .edit-course-form input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 8px;
+    }
+
+    .edit-course-form select {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .view-course-data p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .view-course-data p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .view-course-data p {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .view-course-data p {
+        font-size: 8px;
+    }
+}
+
+.view-course-data p button {
+    font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+    .view-course-data p button {
+        font-size: 12px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .view-course-data p button {
+        font-size: 10px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+@media (max-width: 800px) {
+    .view-course-data p button {
+        font-size: 8px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .view-course-data p button {
+        font-size: 6px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .download-button, .save-modal {
+        font-size: 14px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .download-button, .save-modal {
+        font-size: 12px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+@media (max-width: 800px) {
+    .download-button, .save-modal {
+        font-size: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .download-button, .save-modal {
+        font-size: 8px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+.students-column-modal {
+    padding-left: 4px;
+    font-weight: bold;
+    padding-top: 6px;
+}
+
+@media (max-width: 1200px) {
+    .students-column-modal, .list-group-item {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .students-column-modal, .list-group-item {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .students-column-modal, .list-group-item {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .students-column-modal, .list-group-item {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 780px) {
+    .modal-content {
+        width: 320px;
+    }
+}
+
+@media (max-width: 650px) {
+    .modal-content {
+        width: 220px;
+    }
+}
+
+@media (max-width: 500px) {
+    .modal-content {
+        width: 180px;
+    }
+}
+
+@media (max-width: 830px) {
+    .div-contenedor-padre div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 1200px) {
+    .div-contenedor-padre div label {
+        font-size: 14px;
+    }
+
+    .div-contenedor-padre div input {
+        font-size: 14px;
+    }
+
+    .div-contenedor-padre div select {
+        font-size: 14px;
+    }
+
+    .div-contenedor-padre div textarea {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .div-contenedor-padre div label {
+        font-size: 12px;
+        width: auto;
+    }
+
+    .div-contenedor-padre div input {
+        font-size: 12px;
+        width: auto;
+    }
+
+    .div-contenedor-padre div select {
+        font-size: 12px;
+        width: auto;
+    }
+
+    .div-contenedor-padre div textarea {
+        font-size: 12px;
+        width: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .div-contenedor-padre div label {
+        font-size: 10px;
+    }
+
+    .div-contenedor-padre div input {
+        font-size: 10px;
+    }
+
+    .div-contenedor-padre div select {
+        font-size: 10px;
+    }
+
+    .div-contenedor-padre div textarea {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .div-contenedor-padre div label {
+        font-size: 8px;
+    }
+
+    .div-contenedor-padre div input {
+        font-size: 8px;
+    }
+
+    .div-contenedor-padre div select {
+        font-size: 8px;
+    }
+
+    .div-contenedor-padre div textarea {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .button-div button {
+        font-size: 14px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .button-div button {
+        font-size: 12px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+@media (max-width: 800px) {
+    .button-div button {
+        font-size: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .button-div button {
+        font-size: 8px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sidebar ul li a {
+        font-size: 12px;
+        display: flex;
+    }
+}
+
+@media (max-width: 1000px) {
+    .sidebar ul li a {
+        font-size: 10px;
+        display: flex;
+    }
+}
+
+@media (max-width: 800px) {
+    .sidebar ul li a {
+        font-size: 8px;
+        display: flex;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar ul li a {
+        font-size: 6px;
+        display: flex;
+    }
+}
+
+.i-sidebar a i {
+    padding-right: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.sidebar {
+    width: auto;
+    height: 100%;
+    background-color: #111;
+    padding-top: 10px;
+  }
+  
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 15px 15px;
+    text-align: left;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #bdb5b5;
+    border-radius: 5px;
+    color: black;
+}
+
+.content {
+    margin-left: 60px;
+    margin-right: 60px;
+    flex: 1;
+}
+
+.body {
+    display: flex;
+    margin-top: 100px;
+}
+
+@media (max-width: 1200px) {
+    .body {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .body {
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 800px) {
+    .body {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .body {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content {
+        padding-left: 70px;
+        padding-right: 70px;
+        margin-left: 0px;
+        margin-right: 10px;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .content {
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .content {
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .i-sidebar a i {
+        padding-right: 7px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .i-sidebar a i {
+        padding-right: 6px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+}
+
+@media (max-width: 800px) {
+    .i-sidebar a i {
+        padding-right: 5px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+}
+
+@media (max-width: 600px) {
+    .i-sidebar a i {
+        padding-right: 4px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sidebar ul li {
+        padding-right: 7px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .sidebar ul li {
+        padding-right: 6px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+}
+
+@media (max-width: 800px) {
+    .sidebar ul li {
+        padding-right: 5px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar ul li {
+        padding-right: 4px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+@media (max-width: 1200px) {
+    br {
+      display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .log-in-register li a {
+        font-size: 16px;
+        border-bottom: 1.5px solid;
+    }
+}
+
+@media (max-width: 1000px) {
+    .log-in-register li a {
+        font-size: 14px;
+        border-bottom: 1px solid;
+    }
+}
+
+@media (max-width: 800px) {
+    .log-in-register li a {
+        font-size: 12px;
+        border-bottom: 0.8px solid;
+    }
+}
+
+@media (max-width: 600px) {
+    .log-in-register li a {
+        font-size: 10px;
+        border-bottom: 0.5px solid;
+    }
+}
+
+@media (max-width: 1200px) {
+    .login-register-title {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .login-register-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .login-register-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .login-register-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container-login {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container-login {
+        padding-top: 26px;
+        padding-bottom: 26px;
+    }
+}
+
+@media (max-width: 800px) {
+    .container-login {
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-login {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer-login-register {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .footer-login-register {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .footer-login-register {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-login-register {
+        font-size: 8px;
+    }
+}
+
+/* asd */
+
+@media (max-width: 1200px) {
+    .login-register-form div input {
+        font-size: 14px;
+        padding-left: 10px;
+    }
+
+    .login-register-form div {
+        margin-bottom: 14px;
+    }
+
+    .login-register-form input {
+        font-size: 14px;
+        padding: 0px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .login-register-form div input {
+        font-size: 12px;
+        padding-left: 10px;
+    }
+
+    .login-register-form div {
+        margin-bottom: 12px;
+    }
+
+    .login-register-form input {
+        font-size: 12px;
+        padding: 0px;
+    }
+}
+
+@media (max-width: 800px) {
+    .login-register-form div input {
+        font-size: 10px;
+        padding-left: 10px;
+    }
+
+    .login-register-form div {
+        margin-bottom: 10px;
+    }
+
+    .login-register-form input {
+        font-size: 10px;
+        padding: 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .login-register-form div input {
+        font-size: 8px;
+        padding-left: 10px;
+    }
+
+    .login-register-form div {
+        margin-bottom: 8px;
+    }
+
+    .login-register-form input {
+        font-size: 8px;
+        padding: 0px;
+    }
+}
+
+.fa-1x {
+    font-size: 1.5rem;
+}
+
+.navbar-toggler.toggler-example {
+cursor: pointer;
+}
+
+#hamburger-div {
+    display: none;
+}
+  
+@media (max-width: 767px) {
+    #hamburger-div {
+      display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .sidebar {
+        display: none;
+    }
+    .navbar-brand {
+        display: none;
+    }
+    .logged-in {
+        display: none;
+    }
+    .nav-header {
+        justify-content: center;
+    }
+    .log-in-register {
+        display: none;
+    }
+}
+
+tr td:nth-child(5),
+tr td:nth-child(6) {
+  text-align: center;
+}
+
+#navbarSupportedContent1 ul li a {
+    color: black;
+}
+
+@media (max-width: 667px) {
+    #navbarSupportedContent1 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 567px) {
+    #navbarSupportedContent1 {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 467px) {
+    #navbarSupportedContent1 {
+        font-size: 10px;
+    }
+}

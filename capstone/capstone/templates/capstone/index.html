@@ -1,0 +1,88 @@
+{% extends "capstone/layout.html" %}
+
+{% block body %}
+    <div>
+        <h3 id="app-title" style="text-align: center;padding-top: 30px;">Welcome to ACOMA, your best academic course management system.</h3>
+
+        <br>
+        <h4 id="course-title" style="padding-bottom: 8px;font-weight: bold;">Courses</h4>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Programme</th>
+                <th>Details</th>
+                {% if user.is_authenticated %}
+                    <th>Edit</th>
+                {% endif %}
+            </tr>
+            {% for curso in cursos_per_page %}
+                <tr>
+                    <td class="nombre">{{ curso.nombre }}</td>
+                    <td class="categoria">{{ curso.get_categoria_display }}</td>
+                    <td class="fecha_inicio">{{ curso.fecha_inicio }}</td>
+                    <td class="fecha_fin">{{ curso.fecha_fin }}</td>
+                    <td class="temario"><a href="{{ curso.temario }}" target="_blank" class="view-style view-style-index">View</a></td>
+                    <td><a href="{% url 'view_course' curso.pk %}" class="view-style view-style-index">Go</a></td>
+                    {% if user.is_authenticated %}
+                        <td class="td-acciones">
+                            <button onclick="editCourseData(this)" class="btn btn-primary edit-button" data-course-id="{{ curso.id }}" data-categoria="{{ curso.categoria }}" data-teacher="{{ curso.teacher_id }}"><i class="fa-solid fa-pencil"></i></button>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+        
+        <div class="centered-form">
+            <form id="edit-form" style="display:none;" class="edit-course-form">
+                <input type="hidden" id="course_id" name="course_id" value="">
+                <h3>Edit the Course Information</h3>
+                <br>
+                <label for="edit-nombre" style="padding-right: 114px;">Name:</label>
+                <input type="text" id="edit-nombre" name="nombre"><br><br>
+                
+                <label for="edit-categoria" style="padding-right: 88px;">Categoría:</label>
+                <select id="edit-categoria" name="categoria" style="padding-bottom: 10px;padding-right: 70px;">
+                    {% for categoria in categorias %}
+                        <option value="{{ categoria.valor }}" {% if categoria.valor == curso.categoria %}selected{% endif %}>{{ categoria.nombre }}</option>
+                    {% endfor %}
+                </select><br><br>
+
+                <label for="edit-fecha_inicio" style="padding-right: 86px;">Start Date:</label>
+                <input type="text" id="edit-fecha_inicio" name="fecha_inicio"><br><br>
+
+                <label for="edit-fecha_fin" style="padding-right: 92px;">End Date:</label>
+                <input type="text" id="edit-fecha_fin" name="fecha_fin"><br><br>
+
+                <label for="edit-temario" style="padding-right: 10px;">Programme PDF link:</label>
+                <input type="text" id="edit-temario" name="temario" value="{{ curso.temario }}"><br><br>
+
+                <label for="edit-teacher" style="padding-right: 100px;">Teacher:</label>
+                <select id="edit-teacher" name="teacher" style="padding-bottom: 10px;padding-right: 4px;">
+                    {% for teacher in teachers %}
+                    <option value="{{ teacher.id }}">{{ teacher.nombre }}</option>
+                    {% endfor %}
+                </select><br><br>
+                
+                <input type="button" value="Save Changes" class="btn btn-success" onclick="saveCourseChanges()">
+            </form>
+        </div>
+
+        <nav id="nav-del-course" style="padding-top: 40px;">
+            <ul class="pagination d-flex justify-content-center">
+                {% if cursos_per_page.has_previous %}
+                <li class="page-item">
+                    <a class="page-link page-link-styles" href="?page={{cursos_per_page.previous_page_number}}">Previous</a>
+                </li>
+                {% endif %}
+                {% if cursos_per_page.has_next %}
+                <li class="page-item">
+                    <a class="page-link page-link-styles" href="?page={{cursos_per_page.next_page_number}}">Next</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+{% endblock %}

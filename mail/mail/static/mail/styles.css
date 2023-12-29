@@ -1,0 +1,119 @@
+textarea {
+    min-height: 400px;
+}
+
+.column-label-styles {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 18px;
+    width: 33.3%;
+}
+
+.email-list-style {
+    width: 33.3%;
+    cursor: pointer;
+}
+
+.email-style {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+span {
+    font-weight: bold;
+}
+
+.email-labels {
+    margin-bottom: 5px;
+}
+
+.email-read {
+    background-color: #555554;
+    color:#fff;
+    border-bottom: 1px solid rgb(167, 164, 164);
+}
+
+.email-unread {
+    background-color: #fff;
+    color:#555554;
+    border-bottom: 1px solid rgb(167, 164, 164);
+}
+
+.first-row-container {
+    display: flex;
+    width: 100%;
+    background-color: rgb(49, 49, 56);
+    color: white;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+.first-row-style {
+    margin-bottom: 0px;
+    padding-left: 2px;
+}
+
+#email-view {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    opacity: 0.9;
+}
+
+.login {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.logged {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.register {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.register a {
+    color: rgb(137, 255, 59);
+}
+
+.btns {
+    background-color: rgb(49, 49, 56);
+    color: #fff;
+    margin-top: 15px;
+}
+
+.btns:hover {
+    color: #fff;
+}
+
+.btn-reply {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn-archive {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+#compose-form {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    opacity: 0.9;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+}

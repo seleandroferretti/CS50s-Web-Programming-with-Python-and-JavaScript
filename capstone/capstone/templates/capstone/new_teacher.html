@@ -1,0 +1,31 @@
+{% extends "capstone/layout.html" %}
+
+{% block body %}
+    <h3 style="text-align: center;padding-top: 30px;">New Teacher</h3>
+
+    <div class="container-cursos">
+        <div id="cursos-form-style">
+            <h4 style="padding-bottom: 20px;">Complete the form</h4>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="div-contenedor-padre">
+                    <div>
+                        <label for="nombre" class="nombre-curso-label">Full Name:</label>
+                        <input required type="text" maxlength="255" id="cursos-input" class="form-control nombre-curso-input" name="nombre" placeholder="Full Name">
+                    </div>
+                    <div>
+                        <label for="documento" class="nombre-curso-label">ID Card Number:</label>
+                        <input required type="text" maxlength="255" id="cursos-input" class="form-control nombre-curso-input" name="documento" placeholder="ID Card Number">
+                    </div>
+                    <div>
+                        <label for="profesion" class="nombre-curso-label">Profession:</label>
+                        <input required type="text" maxlength="255" id="cursos-input" class="form-control nombre-curso-input" name="profesion" placeholder="Profession">
+                    </div>
+                    <div class="button-div">
+                        <button type="submit" class="btn btn-success">Save Changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

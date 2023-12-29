@@ -1,0 +1,52 @@
+{% extends "capstone/layout.html" %}
+
+{% block body %}
+<div>
+    <div class="view_course_container">
+        <div class="inner_div">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="flex: 1; text-align: center; padding-bottom: 28px;font-weight: bold;">{{ course.nombre }}</h3>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'generate_pdf' pk=course.pk %}" class="btn btn-secondary download-button" style="margin-bottom: 36px;"><i class="fa-regular fa-circle-down"></i> Download</a>
+                {% endif %}
+            </div>
+            <div class="view-course-data">
+                <p><span style="font-weight: bold;">Category:</span> {{ course.get_categoria_display }}</p>
+                <p><span style="font-weight: bold;">Start Date:</span> {{ course.fecha_inicio }}</p>
+                <p><span style="font-weight: bold;">End Date:</span> {{ course.fecha_fin }}</p>
+                <p><span style="font-weight: bold;padding-right: 8px;">Programme:</span> <a href="{{ course.temario }}" target="_blank" class="view-style">View</a></p>
+                <p><span style="font-weight: bold;">Teacher:</span> {{ course.teacher.nombre }}</p>
+
+                <p>
+                    {% if user.is_authenticated %}
+                    <span style="font-weight: bold;padding-right: 8px;">Students:</span>
+                        <button id="openModalButton" type="button" class="btn btn-primary" value="{{ course.id }}">
+                            Manage Students
+                        </button>
+                    {% else %}
+                    <p><span style="font-weight: bold;padding-right: 8px;">Enrolled Students:</span></p>    
+                        {% if students %}
+                            <div class="student-list-container">
+                                
+                                <table>
+                                    {% for student in students %}
+                                        <tr>
+                                            <td>{{ student.nombre }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        {% else %}
+                            <p style="color: red;">There are no students enrolled in this course.</p>
+                        {% endif %}
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog" id="modal-dialog-id"></div>
+</div>
+{% endblock %}

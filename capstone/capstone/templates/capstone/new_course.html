@@ -1,0 +1,53 @@
+{% extends "capstone/layout.html" %}
+
+{% block body %}
+    <h3 style="text-align: center;padding-top: 30px;font-weight: bold;">New Course</h3>
+
+    <div class="container-cursos">
+        <div id="cursos-form-style">
+            <h4 style="padding-bottom: 20px;">Complete the form</h4>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="div-contenedor-padre">
+                    <div>
+                        <label for="nombre" class="nombre-curso-label">Name of the course:</label>
+                        <input required type="text" maxlength="255" id="cursos-input" class="form-control nombre-curso-input" name="nombre" placeholder="Name of the course">
+                    </div>
+                    <div>
+                        <label for="categoria" class="nombre-curso-label">Category:</label>
+                        <select name="categoria" id="categoria" class="nombre-curso-input select-categorias" required>
+                            <option value="" disabled selected>Choose a category</option>
+                            {% for key, value in categorias %}
+                                <option value="{{ key }}">{{ value }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <label for="fecha_inicio" class="nombre-curso-label">Start Date:</label>
+                        <input required type="text" maxlength="255" id="cursos-input" class="form-control nombre-curso-input" name="fecha_inicio" placeholder="Start Date">
+                    </div>
+                    <div>
+                        <label for="fecha_fin" class="nombre-curso-label">End Date:</label>
+                        <input required type="text" maxlength="255" id="cursos-input" class="form-control nombre-curso-input" name="fecha_fin" placeholder="End Date">
+                    </div>
+                    <div>
+                        <label for="temario" class="nombre-curso-label">Programme PDF link:</label>
+                        <textarea required type="text" maxlength="5000" id="cursos-input" class="form-control nombre-curso-input" name="temario" placeholder="Programme PDF link"></textarea>
+                    </div>
+                    <div>
+                        <label for="teacher_id" class="nombre-curso-label">Teacher:</label>
+                        <select name="teacher_id" id="teacher_id" class="nombre-curso-input select-categorias" required>
+                            <option value="" disabled selected>Choose a teacher</option>
+                            {% for teacher in teachers %}
+                                <option value="{{ teacher.id }}">{{ teacher.nombre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="button-div">
+                        <button type="submit" class="btn btn-success">Save Changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
